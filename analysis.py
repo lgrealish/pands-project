@@ -47,3 +47,15 @@ def sepal_length_hist():
     plt.legend()
     #plt.savefig("Sepal-lenght.png")
     plt.show()
+
+    #function for plotting a histogram for sepal width
+def sepal_width_hist():
+    plt.figure(figsize = (9,9))
+    sns.distplot(iris_s["SepalWidthCm"],  kde = False, label = "Iris setosa", color = "deeppink")
+    sns.distplot(iris_vers["SepalWidthCm"],  kde=False, label = "Iris versicolor", color = "mediumorchid")
+    sns.distplot(iris_virg["SepalWidthCm"],  kde=False, label = "Iris virginica", color = "navy")
+    plt.title("Sepal width in cm", size = 20)
+    plt.xlabel("")
+    plt.ylabel("Frequency", size = 16)
+    plt.legend()
+    plt.savefig("Sepal-width.png")
