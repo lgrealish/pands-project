@@ -59,3 +59,4 @@ def sepal_width_hist():
     plt.ylabel("Frequency", size = 16)
     plt.legend()
     plt.savefig("Sepal-width.png")
+    plt.show()
