@@ -27,7 +27,7 @@ import sys
 #iris_vers = ifds[ifds.Species == "Iris-versicolor"]
 #iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
-
+'''
 def sepal_length_hist():
     # https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib
     plt.figure(figsize = (9,9))
@@ -99,3 +99,11 @@ iris_virg = ifds[ifds.Species == "Iris-virginica"]
 histograms()
 scatterplots()
 pairplot()    
+'''
+
+ifds = pd.read_csv("iris.csv", index_col = "Id")
+
+sns.pairplot(ifds.drop(['Id'], axis = 1), hue='Species', height=2)
+plt.show()
+
+
