@@ -19,13 +19,13 @@ import sys
 # variable ifds stands for iris flower dataset
 # with "index_col='Id'" I am eliminating the Id column as it is unnecessary in this case
 # reference for index_col: https://realpython.com/python-csv/
-ifds = pd.read_csv("iris.csv", index_col = "Id")
+#ifds = pd.read_csv("iris.csv", index_col = "Id")
 #show()
 
 # defining the three diferent species variables
-iris_s = ifds[ifds.Species == "Iris-setosa"]
-iris_vers = ifds[ifds.Species == "Iris-versicolor"]
-iris_virg = ifds[ifds.Species == "Iris-virginica"]
+#iris_s = ifds[ifds.Species == "Iris-setosa"]
+#iris_vers = ifds[ifds.Species == "Iris-versicolor"]
+#iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
 
 def sepal_length_hist():
@@ -87,3 +87,15 @@ def histograms():
     sepal_width_hist()
     petal_length_hist()
     petal_width_hist()
+
+ifds = pd.read_csv("iris.csv", index_col = "Id")
+
+#summary_to_file()
+
+iris_s = ifds[ifds.Species == "Iris-setosa"]
+iris_vers = ifds[ifds.Species == "Iris-versicolor"]
+iris_virg = ifds[ifds.Species == "Iris-virginica"]
+
+histograms()
+scatterplots()
+pairplot()    
