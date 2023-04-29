@@ -2,6 +2,11 @@
 # Author: Linda Grealish
 # This program reads in data from the iris.csv file and produces various analysis
 
+# https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
+# https://gist.github.com/accessnash/7c255c0cfc12d2725ac79f6710ba19a3
+# https://notebook.community/xR86/ml-stuff/kaggle/iris/Simple%20analysis%20of%20Iris%20dataset
+
+
 
 # import the modules needed 
 import numpy as np
@@ -17,6 +22,7 @@ import sys
 ifds = pd.read_csv("iris.csv", index_col = "Id")
 #show()
 
+# defining the three diferent species variables
 iris_s = ifds[ifds.Species == "Iris-setosa"]
 iris_vers = ifds[ifds.Species == "Iris-versicolor"]
 iris_virg = ifds[ifds.Species == "Iris-virginica"]
@@ -63,3 +69,21 @@ def petal_length_hist():
     plt.legend()
     #plt.savefig("Petal-lenght.png")
     plt.show()
+
+def petal_width_hist():
+    plt.figure(figsize = (9,9))
+    sns.distplot(iris_s["PetalWidthCm"],  kde = False, label = "Iris setosa", color = "blue")
+    sns.distplot(iris_vers["PetalWidthCm"],  kde = False, label = "Iris versicolor", color = "orange")
+    sns.distplot(iris_virg["PetalWidthCm"],  kde = False, label = "Iris virginica", color = "green")
+    plt.title("Petal width in cm", size = 20)
+    plt.xlabel("")
+    plt.ylabel("Frequency", size = 16)
+    plt.legend()
+    #plt.savefig("Petal-width.png")
+    plt.show()
+
+def histograms():
+    sepal_length_hist()
+    sepal_width_hist()
+    petal_length_hist()
+    petal_width_hist()
