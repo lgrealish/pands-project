@@ -15,7 +15,7 @@ import seaborn as sns
 import pandas as pd
 import sys
 
-# reading the CSV file - iris.csv
+# use the Pandas library to load the CSV file and convert in 
 # variable ifds stands for iris flower dataset
 # with "index_col='Id'" I am eliminating the Id column as it is unnecessary in this case
 # reference for index_col: https://realpython.com/python-csv/
@@ -27,7 +27,7 @@ import sys
 #iris_vers = ifds[ifds.Species == "Iris-versicolor"]
 #iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
-'''
+
 def sepal_length_hist():
     # https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib
     plt.figure(figsize = (9,9))
@@ -43,7 +43,8 @@ def sepal_length_hist():
     plt.legend()
     #plt.savefig("Sepal-lenght.png")
     plt.show()
-
+  
+'''
     # function for plotting a histogram for sepal width
 def sepal_width_hist():
     plt.figure(figsize = (9,9))
@@ -99,11 +100,34 @@ iris_virg = ifds[ifds.Species == "Iris-virginica"]
 histograms()
 scatterplots()
 pairplot()    
+
+
 '''
 
-ifds = pd.read_csv("iris.csv", index_col = "Id")
+iris = pd.read_csv("iris.csv")
+#Drop id column
+iris = iris.drop('Id',axis=1)
+sns.pairplot(iris,hue='Species')
 
-sns.pairplot(ifds.drop(['Id'], axis = 1), hue='Species', height=2)
 plt.show()
 
+# function for plotting a scatterplot for sepal length and width
+def sepal_length_width_scat():
+    plt.figure(figsize = (9,9))
+    sns.scatterplot(x = "SepalLengthCm", y = "SepalWidthCm", data = ifds)
+    plt.title("Sepal length and Sepal width comparison")
+    plt.xlabel("Sepal length")
+    plt.ylabel("Sepal width")
+    plt.legend()
+    plt.show()
 
+# function for plotting a scatterplot for petal length and width
+def petal_length_width_scat():
+    plt.figure(figsize = (9,9))
+    sns.scatterplot(x = "PetalLengthCm", y = "PetalWidthCm", data = ifds)
+    plt.title("Petal length and Petal width comparison")
+    plt.xlabel("Petal length")
+    plt.ylabel("Petal width")
+    plt.legend()
+    plt.savefig("Petal-length-width.png")
+    plt.show()
