@@ -90,8 +90,7 @@ def histograms():
     sepal_width_hist()
     petal_length_hist()
     petal_width_hist()
-
-ifds = pd.read_csv("iris.csv", index_col = "Id")
+'''
 
 #summary_to_file()
 
@@ -99,19 +98,20 @@ iris_s = ifds[ifds.Species == "Iris-setosa"]
 iris_vers = ifds[ifds.Species == "Iris-versicolor"]
 iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
-histograms()
-scatterplots()
-pairplot()    
 
-
-'
+''''
 # https://datagy.io/seaborn-pairplot/
 iris = pd.read_csv("iris.csv")
 #Drop id column
 iris = iris.drop('Id',axis=1)
+print(iris.head())
 sns.pairplot(iris,hue='Species')
-
 plt.show()
+'''
+def pairplot():
+    sns.pairplot(ifds,hue='Species')
+    plt.show()
+
 '''
 # function for plotting a scatterplot for sepal length and width
 def sepal_length_width_scat():
@@ -138,7 +138,7 @@ def petal_length_width_scat():
 def scatterplots():
     sepal_length_width_scat()
     petal_length_width_scat()
-
+'''
 #def summary_to_file()
 
 iris_s = ifds[ifds.Species == "Iris-setosa"]
@@ -146,5 +146,5 @@ iris_vers = ifds[ifds.Species == "Iris-versicolor"]
 iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
 #histograms()
-scatterplots()
-#pairplot()   
+#scatterplots()
+pairplot()   
