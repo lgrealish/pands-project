@@ -20,6 +20,7 @@ import sys
 # variable ifds stands for iris flower dataset
 # with "index_col='Id'" I am eliminating the Id column as it is unnecessary in this case
 # reference for index_col: https://realpython.com/python-csv/
+# https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
 ifds = pd.read_csv("iris.csv", index_col = "Id")
 #show()
 
@@ -28,7 +29,7 @@ iris_s = ifds[ifds.Species == "Iris-setosa"]
 iris_vers = ifds[ifds.Species == "Iris-versicolor"]
 iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
-
+'''
 def sepal_length_hist():
     # https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib
     plt.figure(figsize = (9,9))
@@ -45,7 +46,7 @@ def sepal_length_hist():
     #plt.savefig("Sepal-lenght.png")
     plt.show()
   
-'''
+
     # function for plotting a histogram for sepal width
 def sepal_width_hist():
     plt.figure(figsize = (9,9))
@@ -103,7 +104,7 @@ scatterplots()
 pairplot()    
 
 
-'''
+'
 # https://datagy.io/seaborn-pairplot/
 iris = pd.read_csv("iris.csv")
 #Drop id column
@@ -111,7 +112,7 @@ iris = iris.drop('Id',axis=1)
 sns.pairplot(iris,hue='Species')
 
 plt.show()
-
+'''
 # function for plotting a scatterplot for sepal length and width
 def sepal_length_width_scat():
     plt.figure(figsize = (9,9))
@@ -132,3 +133,18 @@ def petal_length_width_scat():
     plt.legend()
     plt.savefig("Petal-length-width.png")
     plt.show()
+
+
+def scatterplots():
+    sepal_length_width_scat()
+    petal_length_width_scat()
+
+#def summary_to_file()
+
+iris_s = ifds[ifds.Species == "Iris-setosa"]
+iris_vers = ifds[ifds.Species == "Iris-versicolor"]
+iris_virg = ifds[ifds.Species == "Iris-virginica"]
+
+#histograms()
+scatterplots()
+#pairplot()   
