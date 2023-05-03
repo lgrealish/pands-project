@@ -5,6 +5,7 @@
 # https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
 # https://gist.github.com/accessnash/7c255c0cfc12d2725ac79f6710ba19a3
 # https://notebook.community/xR86/ml-stuff/kaggle/iris/Simple%20analysis%20of%20Iris%20dataset
+# https://realpython.com/pandas-plot-python/
 
 
 
@@ -19,13 +20,13 @@ import sys
 # variable ifds stands for iris flower dataset
 # with "index_col='Id'" I am eliminating the Id column as it is unnecessary in this case
 # reference for index_col: https://realpython.com/python-csv/
-#ifds = pd.read_csv("iris.csv", index_col = "Id")
+ifds = pd.read_csv("iris.csv", index_col = "Id")
 #show()
 
 # defining the three diferent species variables
-#iris_s = ifds[ifds.Species == "Iris-setosa"]
-#iris_vers = ifds[ifds.Species == "Iris-versicolor"]
-#iris_virg = ifds[ifds.Species == "Iris-virginica"]
+iris_s = ifds[ifds.Species == "Iris-setosa"]
+iris_vers = ifds[ifds.Species == "Iris-versicolor"]
+iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
 
 def sepal_length_hist():
@@ -103,7 +104,7 @@ pairplot()
 
 
 '''
-
+# https://datagy.io/seaborn-pairplot/
 iris = pd.read_csv("iris.csv")
 #Drop id column
 iris = iris.drop('Id',axis=1)
