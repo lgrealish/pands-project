@@ -10,7 +10,7 @@ This repository is used for the final project given during the Programming and S
 
 * [Plots](#plots)
 
-* [Conclusions](#conclusions)
+* [Summary and Conclusions](#conclusions)
 
 * [References](#references)
 
