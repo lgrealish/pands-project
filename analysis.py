@@ -87,9 +87,9 @@ def sepal_length_hist():
     # https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib
     plt.figure(figsize = (9,9))
     # https://cmdlinetips.com/2019/02/how-to-make-histogram-in-python-with-pandas-and-seaborn/
-    sns.distplot(iris_s["SepalLengthCm"],  kde = False, label = "Iris setosa", color = "blue", )
-    sns.distplot(iris_vers["SepalLengthCm"],  kde = False, label = "Iris versicolor", color = "orange")
-    sns.distplot(iris_virg["SepalLengthCm"],  kde = False, label = "Iris virginica", color = "green")
+    sns.histplot(iris_s["SepalLengthCm"],  kde = False, label = "Iris setosa", color = "blue", )
+    sns.histplot(iris_vers["SepalLengthCm"],  kde = False, label = "Iris versicolor", color = "orange")
+    sns.histplot(iris_virg["SepalLengthCm"],  kde = False, label = "Iris virginica", color = "green")
     plt.title("Sepal length in cm", size = 20)
     plt.xlabel("")
     plt.ylabel("Frequency", size = 16)
@@ -100,9 +100,9 @@ def sepal_length_hist():
 # function for plotting a histogram for sepal width
 def sepal_width_hist():
     plt.figure(figsize = (9,9))
-    sns.distplot(iris_s["SepalWidthCm"],  kde = False, label = "Iris setosa", color = "blue")
-    sns.distplot(iris_vers["SepalWidthCm"],  kde=False, label = "Iris versicolor", color = "orange")
-    sns.distplot(iris_virg["SepalWidthCm"],  kde=False, label = "Iris virginica", color = "green")
+    sns.histplot(iris_s["SepalWidthCm"],  kde = False, label = "Iris setosa", color = "blue")
+    sns.histplot(iris_vers["SepalWidthCm"],  kde=False, label = "Iris versicolor", color = "orange")
+    sns.histplot(iris_virg["SepalWidthCm"],  kde=False, label = "Iris virginica", color = "green")
     plt.title("Sepal width in cm", size = 20)
     plt.xlabel("")
     plt.ylabel("Frequency", size = 16)
@@ -113,9 +113,9 @@ def sepal_width_hist():
 # function for plotting a histogram for petal length
 def petal_length_hist():
     plt.figure(figsize = (9,9))
-    sns.distplot(iris_s["PetalLengthCm"],  kde = False, label = "Iris setosa", color = "blue")
-    sns.distplot(iris_vers["PetalLengthCm"],  kde = False, label = "Iris versicolor", color = "orange")
-    sns.distplot(iris_virg["PetalLengthCm"],  kde = False, label = "Iris virginica", color = "green")
+    sns.histplot(iris_s["PetalLengthCm"],  kde = False, label = "Iris setosa", color = "blue")
+    sns.histplot(iris_vers["PetalLengthCm"],  kde = False, label = "Iris versicolor", color = "orange")
+    sns.histplot(iris_virg["PetalLengthCm"],  kde = False, label = "Iris virginica", color = "green")
     plt.title("Petal length in cm", size = 20)
     plt.xlabel("")
     plt.ylabel("Frequency", size = 16)
@@ -126,9 +126,9 @@ def petal_length_hist():
 # function for plotting a histogram for petal width
 def petal_width_hist():
     plt.figure(figsize = (9,9))
-    sns.distplot(iris_s["PetalWidthCm"],  kde = False, label = "Iris setosa", color = "blue")
-    sns.distplot(iris_vers["PetalWidthCm"],  kde = False, label = "Iris versicolor", color = "orange")
-    sns.distplot(iris_virg["PetalWidthCm"],  kde = False, label = "Iris virginica", color = "green")
+    sns.histplot(iris_s["PetalWidthCm"],  kde = False, label = "Iris setosa", color = "blue")
+    sns.histplot(iris_vers["PetalWidthCm"],  kde = False, label = "Iris versicolor", color = "orange")
+    sns.histplot(iris_virg["PetalWidthCm"],  kde = False, label = "Iris virginica", color = "green")
     plt.title("Petal width in cm", size = 20)
     plt.xlabel("")
     plt.ylabel("Frequency", size = 16)
