@@ -16,26 +16,35 @@ import seaborn as sns
 import pandas as pd
 import sys
 
-# use the Pandas library to load the CSV file and convert in 
+# use the Pandas library to load the CSV file and create a dataframe
 # variable ifds stands for iris flower dataset
 # with "index_col='Id'" I am eliminating the Id column as it is unnecessary in this case
 # reference for index_col: https://realpython.com/python-csv/
 # https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
-ifds = pd.read_csv("iris.csv", index_col = "Id")
-#show()
+# csv_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 
-# defining the three diferent species variables
+ifds = pd.read_csv("iris.csv", index_col = "Id")
+
+
+# defining the three different species variables
 iris_s = ifds[ifds.Species == "Iris-setosa"]
 iris_vers = ifds[ifds.Species == "Iris-versicolor"]
 iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
+def summary_output():
+    sys.stdout = open ("output_summary_variabe.txt","w")
+    print (ifds)
+    print (ifds.describe())
+    print (ifds.info())
+    sys.stdout.close()    
+
 # https://realpython.com/pandas-groupby/#pandas-groupby-putting-it-all-together
 # https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset
 # https://www.geeksforgeeks.org/pandas-groupby-and-computing-median/
-
-ifds.groupby('Species').agg(['mean', 'median']) # passing a list of recognized strings
+# this code uses the groupby() to summarise the mean and median sepal width, sepal length,
+# petal length and petal width for each of the species variables
+ifds.groupby('Species').agg(['mean', 'median']).describe() # passing a list of recognized strings
 print(ifds.groupby('Species').agg([np.mean, np.median]))
-
 
 
 '''
@@ -56,7 +65,7 @@ def sepal_length_hist():
     plt.show()
   
 
-    # function for plotting a histogram for sepal width
+# function for plotting a histogram for sepal width
 def sepal_width_hist():
     plt.figure(figsize = (9,9))
     sns.distplot(iris_s["SepalWidthCm"],  kde = False, label = "Iris setosa", color = "blue")
@@ -69,7 +78,7 @@ def sepal_width_hist():
     #plt.savefig("Sepal-width.png")
     plt.show()
 
-#function for plotting a histogram for sepal width
+# function for plotting a histogram for sepal width
 def petal_length_hist():
     plt.figure(figsize = (9,9))
     sns.distplot(iris_s["PetalLengthCm"],  kde = False, label = "Iris setosa", color = "blue")
@@ -99,24 +108,11 @@ def histograms():
     sepal_width_hist()
     petal_length_hist()
     petal_width_hist()
-'''
-
-#summary_to_file()
-
-iris_s = ifds[ifds.Species == "Iris-setosa"]
-iris_vers = ifds[ifds.Species == "Iris-versicolor"]
-iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
 
-''''
+
 # https://datagy.io/seaborn-pairplot/
 # https://www.javatpoint.com/pair-plot-in-python
-iris = pd.read_csv("iris.csv")
-#Drop id column
-iris = iris.drop('Id',axis=1)
-print(iris.head())
-sns.pairplot(iris,hue='Species')
-plt.show()
 
 def pairplot():
     sns.pairplot(ifds,hue='Species')
@@ -152,11 +148,7 @@ def scatterplots():
     sepal_length_width_scat()
     petal_length_width_scat()
 '''
-#def summary_to_file()
-
-iris_s = ifds[ifds.Species == "Iris-setosa"]
-iris_vers = ifds[ifds.Species == "Iris-versicolor"]
-iris_virg = ifds[ifds.Species == "Iris-virginica"]
+summary_output()
 
 #histograms()
 #scatterplots()
