@@ -86,7 +86,6 @@ print(ifds.groupby('Species').agg([np.mean, np.median]))
 def sepal_length_hist():
     # https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib
     plt.figure(figsize = (9,9))
-   
     # https://cmdlinetips.com/2019/02/how-to-make-histogram-in-python-with-pandas-and-seaborn/
     sns.distplot(iris_s["SepalLengthCm"],  kde = False, label = "Iris setosa", color = "blue", )
     sns.distplot(iris_vers["SepalLengthCm"],  kde = False, label = "Iris versicolor", color = "orange")
@@ -95,7 +94,7 @@ def sepal_length_hist():
     plt.xlabel("")
     plt.ylabel("Frequency", size = 16)
     plt.legend()
-    #plt.savefig("Sepal-lenght.png")
+    plt.savefig("Sepal-lenght.png")
     plt.show()
   
 # function for plotting a histogram for sepal width
@@ -183,6 +182,6 @@ def scatterplots():
 
 summary_output()
 
-#histograms()
-#scatterplots()
-#pairplot()   
+histograms()
+scatterplots()
+pairplot()   
