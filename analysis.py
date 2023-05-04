@@ -29,6 +29,15 @@ iris_s = ifds[ifds.Species == "Iris-setosa"]
 iris_vers = ifds[ifds.Species == "Iris-versicolor"]
 iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
+# https://realpython.com/pandas-groupby/#pandas-groupby-putting-it-all-together
+# https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset
+# https://www.geeksforgeeks.org/pandas-groupby-and-computing-median/
+
+ifds.groupby('Species').agg(['mean', 'median']) # passing a list of recognized strings
+print(ifds.groupby('Species').agg([np.mean, np.median]))
+
+
+
 '''
 def sepal_length_hist():
     # https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib
@@ -101,18 +110,22 @@ iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
 ''''
 # https://datagy.io/seaborn-pairplot/
+# https://www.javatpoint.com/pair-plot-in-python
 iris = pd.read_csv("iris.csv")
 #Drop id column
 iris = iris.drop('Id',axis=1)
 print(iris.head())
 sns.pairplot(iris,hue='Species')
 plt.show()
-'''
+
 def pairplot():
     sns.pairplot(ifds,hue='Species')
+    plt.savefig("Iris-dataset-pairplot.png")
     plt.show()
 
-'''
+
+# https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset
+
 # function for plotting a scatterplot for sepal length and width
 def sepal_length_width_scat():
     plt.figure(figsize = (9,9))
@@ -147,4 +160,4 @@ iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
 #histograms()
 #scatterplots()
-pairplot()   
+#pairplot()   
