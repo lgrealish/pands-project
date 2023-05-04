@@ -31,11 +31,31 @@ iris_s = ifds[ifds.Species == "Iris-setosa"]
 iris_vers = ifds[ifds.Species == "Iris-versicolor"]
 iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
+# code for outputting variables summary data to .txt file
 def summary_output():
     sys.stdout = open ("output_summary_variabe.txt","w")
+    print ("\n")
+    print ("==============================================================================")
+    print ("Details of the whole dataset:")
     print (ifds)
+    print ("\n")
+    print ("==============================================================================")
+    print ("Summary Statistics for the Iris Flower Dataset Dataframe")
     print (ifds.describe())
+    print ("\n")
+    print ("==============================================================================")
     print (ifds.info())
+    print ("\n")
+    print ("==============================================================================")
+    print ("The number of distinct classes or species types of iris in the dataframe")
+    print (ifds.nunique)
+    print ("\n")
+    print ("==============================================================================")
+    print ("A summary of the mean and median for sepal length, sepal width, petal length and petal width for each of the three species")
+    print(ifds.groupby('Species').agg([np.mean, np.median]))
+    print ("\n")
+    print ("==============================================================================")
+    print ("The ")
     sys.stdout.close()    
 
 # https://realpython.com/pandas-groupby/#pandas-groupby-putting-it-all-together
