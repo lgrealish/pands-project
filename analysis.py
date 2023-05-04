@@ -76,6 +76,7 @@ def summary_output():
 # https://realpython.com/pandas-groupby/#pandas-groupby-putting-it-all-together
 # https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset
 # https://www.geeksforgeeks.org/pandas-groupby-and-computing-median/
+# https://datascienceparichay.com/article/pandas-groupby-median/
 # this code uses the groupby() to summarise the mean and median sepal width, sepal length,
 # petal length and petal width for each of the species variables
 ifds.groupby('Species').agg(['mean', 'median']).describe() # passing a list of recognized strings
@@ -120,7 +121,7 @@ def petal_length_hist():
     plt.xlabel("")
     plt.ylabel("Frequency", size = 16)
     plt.legend()
-    plt.savefig("Petal-lenght.png")
+    plt.savefig("Petal-length.png")
     plt.show()
 
 # function for plotting a histogram for petal width
@@ -158,20 +159,23 @@ def pairplot():
 # function for plotting a scatterplot for sepal length and width
 def sepal_length_width_scat():
     plt.figure(figsize = (9,9))
-    sns.scatterplot(x = "SepalLengthCm", y = "SepalWidthCm", data = ifds)
-    plt.title("Sepal length and Sepal width comparison")
-    plt.xlabel("Sepal length")
-    plt.ylabel("Sepal width")
+    sns.scatterplot(x = "SepalLengthCm", y = "SepalWidthCm", data = ifds, marker = "o", 
+                    hue = "Species", palette = ["blue","orange","green"], edgecolor = "dimgrey")
+    plt.title("Sepal length and Sepal width comparison", size = 20)
+    plt.xlabel("Sepal length", size = 16)
+    plt.ylabel("Sepal width", size = 16)
     plt.legend()
+    plt.savefig("Sepal-length-width.png")
     plt.show()
 
 # function for plotting a scatterplot for petal length and width
 def petal_length_width_scat():
     plt.figure(figsize = (9,9))
-    sns.scatterplot(x = "PetalLengthCm", y = "PetalWidthCm", data = ifds)
-    plt.title("Petal length and Petal width comparison")
-    plt.xlabel("Petal length")
-    plt.ylabel("Petal width")
+    sns.scatterplot(x = "PetalLengthCm", y = "PetalWidthCm", data = ifds, marker = "o", 
+                    hue = "Species", palette = ["blue","orange","green"], edgecolor = "dimgrey")
+    plt.title("Petal length and Petal width comparison", size = 20)
+    plt.xlabel("Petal length", size = 16)
+    plt.ylabel("Petal width", size = 16)
     plt.legend()
     plt.savefig("Petal-length-width.png")
     plt.show()
