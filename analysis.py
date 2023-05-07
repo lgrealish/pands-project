@@ -20,7 +20,7 @@ import sys
 # reference for index_col: https://realpython.com/python-csv/
 # https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
 # csv_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
-
+# https://www.youtube.com/watch?v=02BFXhPQWHQ
 ifds = pd.read_csv("iris.csv", index_col = "Id")
 
 
@@ -95,7 +95,7 @@ def sepal_length_hist():
     plt.xlabel("")
     plt.ylabel("Frequency", size = 16)
     plt.legend()
-    plt.savefig("Sepal-lenght.png")
+    plt.savefig("Sepal-length.png")
     plt.show()
   
 # function for plotting a histogram for sepal width
