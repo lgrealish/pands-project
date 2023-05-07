@@ -19,7 +19,11 @@ import sys
 # with "index_col='Id'" I am eliminating the Id column as it is unnecessary in this case
 # reference for index_col: https://realpython.com/python-csv/
 # https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
-# csv_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+'''
+csv_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+col_names = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Species']
+ifds = pd.read_csv(csv_url, names = col_names)
+'''
 # https://www.youtube.com/watch?v=02BFXhPQWHQ
 ifds = pd.read_csv("iris.csv", index_col = "Id")
 
@@ -32,7 +36,7 @@ iris_virg = ifds[ifds.Species == "Iris-virginica"]
 # code for outputting variables summary data to .txt file
 # https://www.geeksforgeeks.org/sys-stdout-write-in-python/
 def summary_output():
-    sys.stdout = open ("output_summary_variabe.txt","w")
+    sys.stdout = open ("output_summary_variable.txt","w")
     print ("\n")
     print ("==============================================================================")
     print ("Details of the whole dataset:")
