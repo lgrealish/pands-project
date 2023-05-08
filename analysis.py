@@ -80,17 +80,16 @@ def summary_output():
     print (ifds.groupby('Species').agg([np.mean, np.median]))
     print ("\n")
     print ("==============================================================================")
+    # https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.describe.html
+    # https://note.nkmk.me/en/python-pandas-t-transpose/#:~:text=Use%20the%20T%20attribute%20or,columns%20swapped%20(%3D%20transposed%20object).
+    print ("A summary of the count, mean, median, standard deviation, percentiles for each \n of the 4 variables and grouped by species type")
+    print ("\n")    
+    print (ifds.groupby("Species").describe().T)
     sys.stdout.close()    
-'''
+''
 # https://realpython.com/pandas-groupby/#pandas-groupby-putting-it-all-together
-# https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset
 # https://www.geeksforgeeks.org/pandas-groupby-and-computing-median/
 # https://datascienceparichay.com/article/pandas-groupby-median/
-# this code uses the groupby() to summarise the mean and median sepal width, sepal length,
-# petal length and petal width for each of the species variables
-ifds.groupby('Species').agg(['mean', 'median']).describe() # passing a list of recognized strings
-print(ifds.groupby('Species').agg([np.mean, np.median]))
-'''
 
 # function for plotting a histogram for sepal length
 def sepal_length_hist():

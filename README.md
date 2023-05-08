@@ -92,12 +92,6 @@ From the output summary text file we can see the following details of the data s
 - Sepal length has the highest mean while petal width has the lowest mean.
 - Each of the 3 species of iris have 50 occurances.
 
-- *(ifds)*
-    Gives us the details of the full dataset. There are 150 rows and 5 columns in the dataframe.
-- *(ifds.isnull().sum())*
-    This tells us that there are no null values in any of the columns, SepalLengthCm. SepalWidthCm, PetalLengthCm, PetalWidthCm or Species 
-- *(ifds.describe())*
-    This gives the summary statistics for the dataframe across the 4 variables, sepal length, sepal width, petal length and petal width.  We can clearly see that sepal length has the highest mean while petal width has the lowest mean.
 
 This output from the *describe()* function shows the count, mean, standard deviation and percentiles for each of the 4 variables, sepal length, sepal width, petal length and petal width.
 
@@ -142,19 +136,20 @@ In this section I will look at the plots that I produced which visually summaris
 
 A histogram is a representation of the distribution of data.  The histograms below show the distribution of each of the measurement variables by species across the dataset.
 
-<img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-length.png" alt = "Sepal length" width = "450" height = "450">
-<img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-width.png" alt = "Sepal length" width = "450" height = "450">
 
-<img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-length.png" alt = "Sepal length" width = "450" height = "450">
-<img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-width.png" alt = "Sepal length" width = "450" height = "450">
+<img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-length.png" alt = "Sepal length" width = "450" height = "450"><img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-width.png" alt = "Sepal length" width = "450" height = "450">
 
+<img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-length.png" alt = "Petal length" width = "450" height = "450"><img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-width.png" alt = "Petal width" width = "450" height = "450">
+
+The histogram for the sepal length shows a bit of variation with a number of various peaks while the sepal width is more centred around the 3cm but with smaller peaks either side.  
+
+The histogram of the petal length shows the Iris setosa has a petal length that is much smaller than the those of the other 2 species.
 
 ## **Scatterplots**
 
 Scatterplots shows how the different variables in the dataset correlate with one another.  One variable is plotted on the x-axis with the other plotted on the y-axis.  The scatterplots below show the relationship between sepal measurements and petal measurements.
 
-<img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-length-width.png" alt = "Sepal length" width = "450" height = "450">
-<img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-length-width.png" alt = "Sepal length" width = "450" height = "450">
+<img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-length-width.png" alt = "Sepal length" width = "450" height = "450"><img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-length-width.png" alt = "Sepal length" width = "450" height = "450">
 
 ## **Pairplot**
 
