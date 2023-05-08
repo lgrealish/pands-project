@@ -77,7 +77,7 @@ def summary_output():
     # https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset
     print ("A summary of the mean and median for sepal length, sepal width, petal length \n and petal width for each of the three species")
     print ("\n")
-    print(ifds.groupby('Species').agg([np.mean, np.median]))
+    print (ifds.groupby('Species').agg([np.mean, np.median]))
     print ("\n")
     print ("==============================================================================")
     sys.stdout.close()    

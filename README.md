@@ -12,7 +12,9 @@ This repository is used for the final project given during the Programming and S
     * [Dataset output summary](#datasetsummary)
 
 * [Plots](#plots)
-
+    * [Histograms](#histograms)
+    * [Scatterplots](#scatterplots)
+    * [Pairplots](#pairplots)
 * [Summary and Conclusions](#conclusions)
 * [Technologies](#technologies)
 
@@ -56,7 +58,7 @@ The data was downloaded from https://archive.ics.uci.edu/ml/machine-learning-dat
 
 Alternatively the data could be read in directly from a url, and the code for this can be seen in the analysis.py file.  In order to avoid any potential issues with connectivity I decided not to use this method.
 
-## **Imported libraries**
+## **Imported libraries and modules**
 
 ```python
     import numpy as np
@@ -79,11 +81,82 @@ Alternatively the data could be read in directly from a url, and the code for th
 ***sys*** module represents system-specific parameters and functions and provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter.
 
 ## **Dataset output summary**
-As instructed in the project scope, the summary of the variables in the dataset are saved in a text file and do not show upon running the code in analysis.py. [output_summary_variable.txt](https://github.com/lgrealish/pands-project/blob/main/output_summary_variabe.txt)
+As instructed in the project scope, the summary of the variables in the dataset are saved in a text file and do not show upon running the code in analysis.py. [output_summary_variable.txt](https://github.com/lgrealish/pands-project/blob/main/output_summary_variable.txt)
 
 The defined function *summary_output()* contains the code for creating the dataset summary and writing it to a single .txt file.  This was achieved using the sys.stdout module. [link](https://www.geeksforgeeks.org/sys-stdout-write-in-python/)
 
-The *describe()* function 
+From the output summary text file we can see the following details of the data set;
+
+- There are 150 rows and 5 columns in the dataframe.
+- There are no null values in any of the columns, SepalLengthCm. SepalWidthCm, PetalLengthCm, PetalWidthCm or Species.
+- Sepal length has the highest mean while petal width has the lowest mean.
+- Each of the 3 species of iris have 50 occurances.
+
+- *(ifds)*
+    Gives us the details of the full dataset. There are 150 rows and 5 columns in the dataframe.
+- *(ifds.isnull().sum())*
+    This tells us that there are no null values in any of the columns, SepalLengthCm. SepalWidthCm, PetalLengthCm, PetalWidthCm or Species 
+- *(ifds.describe())*
+    This gives the summary statistics for the dataframe across the 4 variables, sepal length, sepal width, petal length and petal width.  We can clearly see that sepal length has the highest mean while petal width has the lowest mean.
+
+This output from the *describe()* function shows the count, mean, standard deviation and percentiles for each of the 4 variables, sepal length, sepal width, petal length and petal width.
+
+<details>
+           <summary>Output</summary>
+           <p>
+
+           SepalLengthCm  SepalWidthCm  PetalLengthCm  PetalWidthCm
+    count     150.000000    150.000000     150.000000    150.000000
+    mean        5.843333      3.054000       3.758667      1.198667
+    std         0.828066      0.433594       1.764420      0.763161
+    min         4.300000      2.000000       1.000000      0.100000
+    25%         5.100000      2.800000       1.600000      0.300000
+    50%         5.800000      3.000000       4.350000      1.300000
+    75%         6.400000      3.300000       5.100000      1.800000
+    max         7.900000      4.400000       6.900000      2.500000
+
+</p>
+</details>    
+
+This output from the *groupby()* function shows mean and median sepal length, sepal width, petal length and petal width by species. [Link](https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset)
+
+<details>
+           <summary>Output</summary>
+           <p>
+
+                SepalLengthCm        SepalWidthCm        PetalLengthCm        PetalWidthCm       
+                         mean median         mean median          mean median         mean median
+Species                                                                                          
+Iris-setosa             5.006    5.0        3.418    3.4         1.464   1.50        0.244    0.2
+Iris-versicolor         5.936    5.9        2.770    2.8         4.260   4.35        1.326    1.3
+Iris-virginica          6.588    6.5        2.974    3.0         5.552   5.55        2.026    2.0
+
+</p>
+</details>    
+
+# **Plots**
+
+In this section I will look at the plots that I produced which visually summarise the dataset.
+
+## **Histograms**
+
+A histogram is a representation of the distribution of data.  The histograms below show the distribution of each of the measurement variables by species across the dataset.
+
+<img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-length.png" alt = "Sepal length" width = "450" height = "450">
+<img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-width.png" alt = "Sepal length" width = "450" height = "450">
+
+<img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-length.png" alt = "Sepal length" width = "450" height = "450">
+<img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-width.png" alt = "Sepal length" width = "450" height = "450">
+
+
+## **Scatterplots**
+
+Scatterplots shows how the different variables in the dataset correlate with one another.  One variable is plotted on the x-axis with the other plotted on the y-axis.  The scatterplots below show the relationship between sepal measurements and petal measurements.
+
+<img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-length-width.png" alt = "Sepal length" width = "450" height = "450">
+<img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-length-width.png" alt = "Sepal length" width = "450" height = "450">
+
+## **Pairplot**
 
 # **Technologies**
 
