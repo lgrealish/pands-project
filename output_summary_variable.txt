@@ -119,6 +119,10 @@ Iris-virginica          6.588    6.5        2.974    3.0         5.552   5.55   
 
 
 ==============================================================================
+A summary of the count, mean, median, standard deviation, percentiles for each 
+ of the 4 variables and grouped by species type
+
+
 Species              Iris-setosa  Iris-versicolor  Iris-virginica
 SepalLengthCm count    50.000000        50.000000       50.000000
               mean      5.006000         5.936000        6.588000

@@ -43,7 +43,7 @@ The columns that represent records mentioned above are :
 * Species
 
 
-Iris dataset used in this analysis can be found among files in this repository as [Iris_dataset.csv](https://github.com/lgrealish/pands-project/blob/main/iris.csv).
+Iris dataset used in this analysis can be found among files in this repository as [iris.csv](https://github.com/lgrealish/pands-project/blob/main/iris.csv).
 
 # **Dataset code and analysis**
 
@@ -88,9 +88,8 @@ The defined function *summary_output()* contains the code for creating the datas
 From the output summary text file we can see the following details of the data set;
 
 - There are 150 rows and 5 columns in the dataframe.
+- There are 50 observations for each species class.
 - There are no null values in any of the columns, SepalLengthCm. SepalWidthCm, PetalLengthCm, PetalWidthCm or Species.
-- Sepal length has the highest mean while petal width has the lowest mean.
-- Each of the 3 species of iris have 50 occurances.
 
 
 This output from the *describe()* function shows the count, mean, standard deviation and percentiles for each of the 4 variables, sepal length, sepal width, petal length and petal width.
@@ -112,18 +111,23 @@ This output from the *describe()* function shows the count, mean, standard devia
 </p>
 </details>    
 
+- Sepal length has the highest mean while petal width has the lowest mean.
+- The standard deviation in the petal lengths shows the highest variability of the four measurements at 1.76 while the standard deviations 
+  of the petal width is approx 0.43.
+- The shortest petal o   
+
 This output from the *groupby()* function shows mean and median sepal length, sepal width, petal length and petal width by species. [Link](https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset)
 
 <details>
            <summary>Output</summary>
            <p>
 
-                SepalLengthCm        SepalWidthCm        PetalLengthCm        PetalWidthCm       
-                         mean median         mean median          mean median         mean median
-Species                                                                                          
-Iris-setosa             5.006    5.0        3.418    3.4         1.464   1.50        0.244    0.2
-Iris-versicolor         5.936    5.9        2.770    2.8         4.260   4.35        1.326    1.3
-Iris-virginica          6.588    6.5        2.974    3.0         5.552   5.55        2.026    2.0
+                            SepalLengthCm        SepalWidthCm        PetalLengthCm        PetalWidthCm       
+                            mean median         mean median          mean median         mean median
+    Species                                                                                          
+    Iris-setosa             5.006    5.0        3.418    3.4         1.464   1.50        0.244    0.2
+    Iris-versicolor         5.936    5.9        2.770    2.8         4.260   4.35        1.326    1.3
+    Iris-virginica          6.588    6.5        2.974    3.0         5.552   5.55        2.026    2.0
 
 </p>
 </details>    
@@ -141,7 +145,7 @@ A histogram is a representation of the distribution of data.  The histograms bel
 
 <img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-length.png" alt = "Petal length" width = "450" height = "450"><img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-width.png" alt = "Petal width" width = "450" height = "450">
 
-The histogram for the sepal length shows a bit of variation with a number of various peaks while the sepal width is more centred around the 3cm but with smaller peaks either side.  
+The histogram for the sepal length shows quite a bit of variation with a number of various peaks while the sepal width is more centred around the 3cm but with smaller peaks either side.  
 
 The histogram of the petal length shows the Iris setosa has a petal length that is much smaller than the those of the other 2 species.
 
