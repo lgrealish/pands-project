@@ -96,9 +96,10 @@ def sepal_length_hist():
     # https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib
     plt.figure(figsize = (9,9))
     # https://cmdlinetips.com/2019/02/how-to-make-histogram-in-python-with-pandas-and-seaborn/
-    sns.histplot(iris_s["SepalLengthCm"],  kde = False, label = "Iris setosa", color = "blue", )
-    sns.histplot(iris_vers["SepalLengthCm"],  kde = False, label = "Iris versicolor", color = "orange")
-    sns.histplot(iris_virg["SepalLengthCm"],  kde = False, label = "Iris virginica", color = "green")
+    # https://medium.com/swlh/how-to-create-a-seaborn-palette-that-highlights-maximum-value-f614aecd706b
+    sns.histplot(iris_s["SepalLengthCm"],  kde = False, label = "Iris setosa", color = "lightblue", )
+    sns.histplot(iris_vers["SepalLengthCm"],  kde = False, label = "Iris versicolor", color = "lightslategray")
+    sns.histplot(iris_virg["SepalLengthCm"],  kde = False, label = "Iris virginica", color = "steelblue")
     plt.title("Sepal length in cm", size = 20)
     plt.xlabel("")
     plt.ylabel("Frequency", size = 16)
@@ -109,9 +110,9 @@ def sepal_length_hist():
 # function for plotting a histogram for sepal width
 def sepal_width_hist():
     plt.figure(figsize = (9,9))
-    sns.histplot(iris_s["SepalWidthCm"],  kde = False, label = "Iris setosa", color = "blue")
-    sns.histplot(iris_vers["SepalWidthCm"],  kde=False, label = "Iris versicolor", color = "orange")
-    sns.histplot(iris_virg["SepalWidthCm"],  kde=False, label = "Iris virginica", color = "green")
+    sns.histplot(iris_s["SepalWidthCm"],  kde = False, label = "Iris setosa", color = "lightblue")
+    sns.histplot(iris_vers["SepalWidthCm"],  kde=False, label = "Iris versicolor", color = "lightslategray")
+    sns.histplot(iris_virg["SepalWidthCm"],  kde=False, label = "Iris virginica", color = "steelblue")
     plt.title("Sepal width in cm", size = 20)
     plt.xlabel("")
     plt.ylabel("Frequency", size = 16)
@@ -122,9 +123,9 @@ def sepal_width_hist():
 # function for plotting a histogram for petal length
 def petal_length_hist():
     plt.figure(figsize = (9,9))
-    sns.histplot(iris_s["PetalLengthCm"],  kde = False, label = "Iris setosa", color = "blue")
-    sns.histplot(iris_vers["PetalLengthCm"],  kde = False, label = "Iris versicolor", color = "orange")
-    sns.histplot(iris_virg["PetalLengthCm"],  kde = False, label = "Iris virginica", color = "green")
+    sns.histplot(iris_s["PetalLengthCm"],  kde = False, label = "Iris setosa", color = "lightblue")
+    sns.histplot(iris_vers["PetalLengthCm"],  kde = False, label = "Iris versicolor", color = "lightslategray")
+    sns.histplot(iris_virg["PetalLengthCm"],  kde = False, label = "Iris virginica", color = "steelblue")
     plt.title("Petal length in cm", size = 20)
     plt.xlabel("")
     plt.ylabel("Frequency", size = 16)
@@ -135,9 +136,9 @@ def petal_length_hist():
 # function for plotting a histogram for petal width
 def petal_width_hist():
     plt.figure(figsize = (9,9))
-    sns.histplot(iris_s["PetalWidthCm"],  kde = False, label = "Iris setosa", color = "blue")
-    sns.histplot(iris_vers["PetalWidthCm"],  kde = False, label = "Iris versicolor", color = "orange")
-    sns.histplot(iris_virg["PetalWidthCm"],  kde = False, label = "Iris virginica", color = "green")
+    sns.histplot(iris_s["PetalWidthCm"],  kde = False, label = "Iris setosa", color = "lightblue")
+    sns.histplot(iris_vers["PetalWidthCm"],  kde = False, label = "Iris versicolor", color = "lightslategray")
+    sns.histplot(iris_virg["PetalWidthCm"],  kde = False, label = "Iris virginica", color = "steelblue")
     plt.title("Petal width in cm", size = 20)
     plt.xlabel("")
     plt.ylabel("Frequency", size = 16)
@@ -150,8 +151,6 @@ def histograms():
     sepal_width_hist()
     petal_length_hist()
     petal_width_hist()
-
-
 
 # https://datagy.io/seaborn-pairplot/
 # https://www.javatpoint.com/pair-plot-in-python
@@ -192,6 +191,8 @@ def scatterplots():
     sepal_length_width_scat()
     petal_length_width_scat()
 
+# https://www.geeksforgeeks.org/box-plot-in-python-using-matplotlib/
+# https://www.python-graph-gallery.com/30-basic-boxplot-with-seaborn?utm_content=cmp-true
 def boxplots():
     sns.set(style="ticks", palette="pastel")
     f, axes = plt.subplots(2, 2, sharey=False, figsize=(12, 8))
