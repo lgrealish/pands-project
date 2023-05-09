@@ -192,8 +192,22 @@ def scatterplots():
     sepal_length_width_scat()
     petal_length_width_scat()
 
+def boxplots():
+    sns.set(style="ticks", palette="pastel")
+    f, axes = plt.subplots(2, 2, sharey=False, figsize=(12, 8))
+    f, axes = plt.subplots(2, 2, sharey=False, figsize=(12, 8))
+    sns.boxplot(x="Species", y="PetalLengthCm",data=ifds, ax = axes[0,0])
+    sns.boxplot(x="Species", y="SepalLengthCm", data=ifds, ax=axes[0,1])
+    sns.boxplot(x="Species", y="PetalWidthCm",hue = "Species",data=ifds, ax=axes[1,0])
+    sns.boxplot(x="Species", y="SepalWidthCm", data=ifds, ax=axes[1,1])
+    # adding a title to the plot
+    f.suptitle("Boxplot of the Petal and Sepal measurements by Iris plant Species")
+    plt.savefig("Boxplots.png")
+    plt.show()
+
 summary_output()
 
 histograms()
 scatterplots()
-pairplot()   
+pairplot()  
+boxplots() 
