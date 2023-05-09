@@ -6,7 +6,7 @@ This repository is used for the final project given during the Programming and S
 * [Iris dataset information](#iris-dataset)
     * [Iris dataset history](#iris-dataset-history)
     * [Iris dataset file](#iris-dataset-file)
-* [Dataset code and analysis](#dataset-code-and-analysis)
+* [Dataset code and summary output](#dataset-code-and-output-summary)
     * [Dataset import](#dataset-import)
     * [Imported libraries and modules](#imported-libraries-and-modules)
     * [Dataset output summary](#datasetsummary)
@@ -15,7 +15,7 @@ This repository is used for the final project given during the Programming and S
     * [Scatterplots](#scatterplots)
     * [Pairplots](#pairplots)
     * [Boxplots](#boxplots)
-* [Summary and Conclusions](#conclusions)
+* [Summary and Conclusions](#summary-and-conclusions)
 * [Technologies](#technologies)
 
 * [References](#references)
@@ -46,7 +46,7 @@ The columns that represent records mentioned above are :
 
 Iris dataset used in this analysis can be found among files in this repository as [iris.csv](https://github.com/lgrealish/pands-project/blob/main/iris.csv).
 
-# **Dataset code and analysis**
+# **Dataset code and output summary**
 
 ## **Dataset import**
 ```python
@@ -185,6 +185,8 @@ The pairplot shows that the Iris setosa is clearly different to the other 2 spec
 Boxplots are very useful for showing various statistics in one plot, including minimum, quartiles, median and maximum.  The x-axis denotes the data to be plotted while the y-axis shows the frequency of distribution.
 
 <img src = "https://github.com/lgrealish/pands-project/blob/main/Boxplots.png" alt = "Sepal and Petal observations by species" width = "450" height = "450">
+
+# **Summary and Conclusions**
 
 # **Technologies**
 
