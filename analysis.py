@@ -4,7 +4,6 @@
 
 # https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
 # https://gist.github.com/accessnash/7c255c0cfc12d2725ac79f6710ba19a3
-# https://notebook.community/xR86/ml-stuff/kaggle/iris/Simple%20analysis%20of%20Iris%20dataset
 # https://realpython.com/pandas-plot-python/
 
 # import the modules needed 
@@ -19,14 +18,13 @@ import sys
 # with "index_col='Id'" I am eliminating the Id column as it is unnecessary in this case
 # reference for index_col: https://realpython.com/python-csv/
 # https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
+# https://www.youtube.com/watch?v=02BFXhPQWHQ
+ifds = pd.read_csv("iris.csv", index_col = "Id")
 '''
 csv_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 col_names = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Species']
 ifds = pd.read_csv(csv_url, names = col_names)
 '''
-# https://www.youtube.com/watch?v=02BFXhPQWHQ
-ifds = pd.read_csv("iris.csv", index_col = "Id")
-
 
 # defining the three different species variables
 iris_s = ifds[ifds.Species == "Iris-setosa"]
@@ -80,10 +78,10 @@ def summary_output():
     print (ifds.groupby('Species').agg([np.mean, np.median]))
     print ("\n")
     print ("==============================================================================")
-    # https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.describe.html
-    # https://note.nkmk.me/en/python-pandas-t-transpose/#:~:text=Use%20the%20T%20attribute%20or,columns%20swapped%20(%3D%20transposed%20object).
     print ("A summary of the count, mean, median, standard deviation, percentiles for each \n of the 4 variables and grouped by species type")
     print ("\n")  
+    # https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.describe.html
+    # https://note.nkmk.me/en/python-pandas-t-transpose/#:~:text=Use%20the%20T%20attribute%20or,columns%20swapped%20(%3D%20transposed%20object).
     # using the .T function to transpose (swap the columns and rows) to make the output easier to read)  
     print (ifds.groupby("Species").describe().T)
     sys.stdout.close()    
@@ -147,15 +145,17 @@ def petal_width_hist():
     plt.savefig("Petal-width.png")
     plt.show()
 
+# function for grouping all the previously defined functions for creating histograms
 def histograms():
     sepal_length_hist()
     sepal_width_hist()
     petal_length_hist()
     petal_width_hist()
 
+
+# function for plotting a pairplot
 # https://datagy.io/seaborn-pairplot/
 # https://www.javatpoint.com/pair-plot-in-python
-
 def pairplot():
     # using the hue paramter in seaborn denotes which column decides the colour, in this case the Species
     sns.pairplot(ifds,hue='Species')
@@ -191,17 +191,20 @@ def petal_length_width_scat():
     plt.savefig("Petal-length-width.png")
     plt.show()
 
+# function for grouping all the previously defined functions for creating scatterplots
 def scatterplots():
     sepal_length_width_scat()
     petal_length_width_scat()
 
+# function for plotting a box plot
 # https://www.geeksforgeeks.org/box-plot-in-python-using-matplotlib/
 # https://www.python-graph-gallery.com/30-basic-boxplot-with-seaborn?utm_content=cmp-true
 def boxplots():
     sns.set(style="ticks", palette="pastel")
     f, axes = plt.subplots(2, 2, sharey=False, figsize=(12, 8))
     f, axes = plt.subplots(2, 2, sharey=False, figsize=(12, 8))
-    sns.boxplot(x="Species", y="PetalLengthCm",data=ifds, ax = axes[0,0])
+    # define the x and y axis for the 4 boxplot as well as the position on the 2x2 grid (ax=axes[0,1] is top row, first column) etc.
+    sns.boxplot(x="Species", y="PetalLengthCm", data=ifds, ax=axes[0,0])
     sns.boxplot(x="Species", y="SepalLengthCm", data=ifds, ax=axes[0,1])
     sns.boxplot(x="Species", y="PetalWidthCm", data=ifds, ax=axes[1,0])
     sns.boxplot(x="Species", y="SepalWidthCm", data=ifds, ax=axes[1,1])
@@ -210,6 +213,7 @@ def boxplots():
     plt.savefig("Boxplots.png")
     plt.show()
 
+# main part of the code
 summary_output()
 
 histograms()
