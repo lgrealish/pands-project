@@ -25,7 +25,7 @@ This repository is used for the final project given during the Programming and S
 
 Iris flower data, also known as Fisher's Iris dataset was introduced by British biologist and statistitian Sir Ronald Aylmer Fisher. In 1936, Sir Fisher published a report titled [“The Use of Multiple Measurements in Taxonomic Problems”](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x) in the journal Annals of Eugenics. In this article, Fisher developed and evaluated a linear function to differentiate Iris species based on the morphology of their flowers. It was the first time that the sepal and petal measures of the three Iris species as mentioned above appeared publicly.
 
-It is a multivariate data set of 50 samples which the author gathered on each of three species of Irises: setosa, versicolor and virginica. Measurements of 4 properties of 50 flowers of each of the plants were taken, namely Sepal length, Sepal width, Petal Length, and Petal width. The author suggests that the petal and sepal lengths and widths are characteristics whcih can be used to identify which species they belong to based on a linear discriminant model. Fisher himself developed the linear discriminant model,a statistical, machine learning and pattern recognition technique used to distinguish between two or more objects, classes or events. Ref [Linear discriminant analysis](https://en.wikipedia.org/wiki/Linear_discriminant_analysis)Ref [Iris Data set wikipedia](https://en.wikipedia.org/wiki/Iris_flower_data_set) Fischer presented the data for the 3 species in a table with each of the four measurements and subsequently, tables of observed means, sums of squares etc in order to demonstrate how each species can be discriminated from one another. 
+It is a multivariate data set of 50 samples which the author gathered on each of three species of Irises: setosa, versicolor and virginica. Measurements of 4 properties of 50 flowers of each of the plants were taken, namely Sepal length, Sepal width, Petal Length, and Petal width. The author suggests that the petal and sepal lengths and widths are characteristics whcih can be used to identify which species they belong to based on a linear discriminant model. Fisher himself developed the linear discriminant model,a statistical, machine learning and pattern recognition technique used to distinguish between two or more objects, classes or events. [Linear discriminant analysis](https://en.wikipedia.org/wiki/Linear_discriminant_analysis) [Iris Data set wikipedia](https://en.wikipedia.org/wiki/Iris_flower_data_set) Fisher presented the data for the 3 species in a table with each of the four measurements and subsequently, tables of observed means, sums of squares etc in order to demonstrate how each species can be discriminated from one another. 
 
 <img src = https://github.com/lgrealish/pands-project/blob/main/iris-species-image.png alt= "Iris flower species">
 
@@ -45,14 +45,17 @@ The columns that represent records mentioned above are :
 
 Iris dataset used in this analysis can be found among files in this repository as [iris.csv](https://github.com/lgrealish/pands-project/blob/main/iris.csv).
 
+
 # **Dataset code and output summary**
 
 ## **Dataset import**
+
 ```python
     ifds = pd.read_csv("iris.csv", index_col = "Id")
 ```
-This line of code is used for reading the .csv file into DataFrame and storing it as a variable *ifds* (iris flower dataset) for further analysis and manipulation.\
-Since *pandas* is using zero-based integer indices in the DataFrame,  *index_col = "Id"* was used to make the Id column an index column while reading the file. That means that the index column will not be taken into consideration while analysing the data.
+This line of code is used for reading the .csv file into DataFrame and storing it as a variable *ifds* (iris flower dataset) for further analysis and manipulation.
+
+Since *pandas* is using zero-based integer indices in the DataFrame,  *index_col = "Id"* was used to make the Id column an index column while reading the file. That means that the index column will not be taken into consideration while analysing the data. [realpython](https://realpython.com/python-csv/)
 
 The data was downloaded from https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data as a .data file which I then converted to .csv.
 
@@ -67,22 +70,22 @@ Alternatively the data could be read in directly from a url, and the code for th
     import pandas as pd
     import sys
 ```
+***NumPy*** is a Python library that provides a  multidimensional array object, various derived objects (such as masked arrays and matrices), and an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more. [numpy](https://numpy.org/devdocs/user/whatisnumpy.html)
 
-***NumPy*** is a Python library that provides a  multidimensional array object, various derived objects (such as masked arrays and matrices), and an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more. [link](https://numpy.org/devdocs/user/whatisnumpy.html)
+***Matplotlib*** is a comprehensive visualisation library in Python, built on NumPy arrays, for creating static, animated and interactive 2D plots or arrays. [matplotlib] (https://matplotlib.org/)\
+*matplotlib.pyplot* is a state-based interface to *matplotlib*. It provides a MATLAB-like way of plotting. *pyplot* is mainly intended for interactive plots and simple cases of programmatic plot generation. [matplotlib](https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html)
 
-***Matplotlib*** is a comprehensive visualisation library in Python, built on NumPy arrays, for creating static, animated and interactive 2D plots or arrays. [link] (https://matplotlib.org/)\
-*matplotlib.pyplot* is a state-based interface to *matplotlib*. It provides a MATLAB-like way of plotting. *pyplot* is mainly intended for interactive plots and simple cases of programmatic plot generation. [link](https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html)
+***Seaborn*** is a library for making statistical graphics in Python. It is built on top of matplotlib and closely integrated with pandas data structures. [seaborn](https://seaborn.pydata.org/index.html)
 
-***Seaborn*** is a library for making statistical graphics in Python. It is built on top of matplotlib and closely integrated with pandas data structures. [link](https://seaborn.pydata.org/index.html)
-
-***Pandas***The Pandas library is a useful package for importing labelled data such as the iris data set. It makes data such as csv files much easier to work with.
+***Pandas*** The Pandas library is a useful package for importing labelled data such as the iris data set. It makes data such as csv files much easier to work with.
 
 ***sys*** module represents system-specific parameters and functions and provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter.
 
 ## **Dataset output summary**
-As instructed in the project scope, the summary of the variables in the dataset are saved in a text file and do not show upon running the code in analysis.py. [output_summary_variable.txt](https://github.com/lgrealish/pands-project/blob/main/output_summary_variable.txt)
 
-The defined function *summary_output()* contains the code for creating the dataset summary and writing it to a single .txt file.  This was achieved using the sys.stdout module. [geeksforgeeks](https://www.geeksforgeeks.org/sys-stdout-write-in-python/)
+As instructed in the project scope, the summary of the variables in the dataset are saved in a single text file and do not show upon running the code in analysis.py. [output_summary_variable.txt](https://github.com/lgrealish/pands-project/blob/main/output_summary_variable.txt)
+
+The defined function *summary_output()* contains the code for creating the dataset summary and writing it to a single .txt file.  This was achieved using the sys.stdout module. [geeksforgeeks](https://www.geeksforgeeks.org/sys-stdout-write-in-python/) [programcreek](https://www.programcreek.com/python/example/11/sys.stdout)
 
 From the output summary text file we can see the following details of the data set;
 
@@ -117,8 +120,11 @@ This output from the *describe()* function shows the count, mean, standard devia
 - The sepal length has a larger mean than the other 3 variable.
 
 
-This output from the *groupby()* function shows mean and median sepal length, sepal width, petal length and petal width by species. [Link](https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset)
+This output from the *groupby()* function shows mean and median sepal length, sepal width, petal length and petal width by species. [tutorialspoint](https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset)
 
+''' python
+        print (ifds.groupby("Species").describe().T)
+'''
 <details>
            <summary>Output</summary>
            <p>
@@ -135,7 +141,7 @@ This output from the *groupby()* function shows mean and median sepal length, se
 
 # **Plots**
 
-In this section I will look at the plots that I produced which visually summarise the dataset.
+In this section I will look at the plots that I produced to viauslise and summarise the dataset.
 
 ## **Histograms**
 
@@ -143,6 +149,9 @@ A histogram is a representation of the distribution of data.  The histograms bel
 
 To create the histograms firstly I defined 4 seperate functions, 1 for each of the variables (SepalLengthCm. SepalWidthCm, PetalLengthCm, PetalWidthCm).  These were then grouped in a function called *histograms()*.
 
+The variables *iris_s*, *iris_vers* and *iris_virg* are used to subset original dataframes for Iris setosa, Iris versicolor and Iris virginica, respectively. They are outside the histogram functions to allow for multiple use, if necessary. [cmdlinetips](https://cmdlinetips.com/2019/02/how-to-make-histogram-in-python-with-pandas-and-seaborn/)
+
+Various other parameters were included in order to make the plots more aesthetically pleasing.  These include size definition of the title, labels text as well the colour choice. [stackoverflow](https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib) [medium](https://medium.com/swlh/how-to-create-a-seaborn-palette-that-highlights-maximum-value-f614aecd706b)
 
 <img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-length.png" alt = "Sepal length" width = "450" height = "450"><img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-width.png" alt = "Sepal length" width = "450" height = "450">
 
@@ -152,11 +161,24 @@ The histogram for the sepal length shows quite a bit of variation with a number 
 
 We can see that the Iris setosa has a petal length and petal width that is much smaller than the those of the other 2 species.  The Iris setosa also has the smallest sepal length but the largest sepal width.
 
+## **Pairplot**
+
+[datagy](https://datagy.io/seaborn-pairplot/)
+[towardsdatascience](https://towardsdatascience.com/seaborn-pairplot-enhance-your-data-understanding-with-a-single-plot-bf2f44524b22#:~:text=The%20Seaborn%20Pairplot%20allows%20us,to%20become%20familiar%20with%20it.)
+
+Using the *pairplot()* function from the *seaborn* library we can produce the following pairplot which displays all pairwise relationships between variables within a dataset.  It creates a nice visualisation which summarises a large amount of data in a single figure.  Pairplots give a good comparison and observation of the data and provides enough information to draw conclusions.
+
+Because there are 4 different variables in our data set (SepalLengthCm, SepalWidthCm, PetalLengthCm, PetalWidthCm) a 4x4 plot is created.
+
+<img src = "https://github.com/lgrealish/pands-project/blob/main/Iris-dataset-pairplot.png" alt = "Sepal length, width and Petal length, width " width = "450" height = "450">
+
+The pairplot shows that the Iris setosa is clearly different to the other 2 species.  We can also see that is more difficult to differentiate the other 2 species from one another as there is more overlap in the data points.
+
 ## **Scatterplots**
 
 Scatterplots shows how the different variables in the dataset correlate with one another.  One variable is plotted on the x-axis with the other plotted on the y-axis.  The scatterplots below show the relationship between sepal measurements and petal measurements.
 
-similarly to the histogram code, each scatterplot was definied in a seperate function before being grouped in a *scatterplot()* function.
+Just like the histogram code, each scatterplot was definied in a seperate function before being grouped in a *scatterplot()* function. [tutorialspoint](https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset)
 
 <img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-length-width.png" alt = "Sepal length and Sepal width" width = "450" height = "450"><img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-length-width.png" alt = "Petal length and Petal width" width = "450" height = "450">
 
@@ -164,27 +186,16 @@ From the Sepal length and Sepal width scatterplot it is easier to distinguish Ir
 
 From the Petal length and Petal width scatterplot the difference between the three species is much more noticable. Iris setosa is very distinct and has the smallest and narrowest petals of the three. Iris virginica has the biggest petals.
 
-## **Pairplot**
-[Pairplots](https://towardsdatascience.com/seaborn-pairplot-enhance-your-data-understanding-with-a-single-plot-bf2f44524b22#:~:text=The%20Seaborn%20Pairplot%20allows%20us,to%20become%20familiar%20with%20it.)
-
-Using the *pairplot()* we can produce the following pairplot which displays all pairwise relationships between variables within a dataset.  It creates a nice visualisation which summarises a large amount of data in a single figure.  Pairplots give a good comparison and observation of the data and provides enough information to draw conclusions.
-
-Because there are 4 different variables in our data set (SepalLengthCm, SepalWidthCm, PetalLengthCm, PetalWidthCm) a 4x4 plot is created.
-
-The pairplot shows that the Iris setosa is clearly different to the other 2 species.  We can also see that is more difficult to differentiate the other 2 species from one another as there is more overlap in the data points.
-
-<img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-length-width.png" alt = "Sepal length and Sepal width" width = "450" height = "450">
-
 ## **Boxplots**
-
-[Box Plots](https://www.geeksforgeeks.org/box-plot-in-python-using-matplotlib/)
-[Box Plots](https://www.python-graph-gallery.com/30-basic-boxplot-with-seaborn?utm_content=cmp-true)
 
 Boxplots were generated using the *seaborn* module and are very useful for showing various statistics in one plot, including minimum, quartiles, median and maximum.  As well as showing the distribution of values withing each species class they also allow for comparisons across the 3 species.  The x-axis denotes the data to be plotted while the y-axis shows the frequency of distribution.
 
+[geeksforgeeks](https://www.geeksforgeeks.org/box-plot-in-python-using-matplotlib/)
+[pythongraphygallery](https://www.python-graph-gallery.com/30-basic-boxplot-with-seaborn?utm_content=cmp-true)
+
 <img src = "https://github.com/lgrealish/pands-project/blob/main/Boxplots.png" alt = "Sepal and Petal observations by species" width = "450" height = "450">
 
-The boxplots above show that the Iris setosa stands out as having much smaller petal size (length and width).
+The boxplots above show that the Iris setosa stands out as having much smaller petal size (both length and width).
 
 # **Summary and Conclusions**
 

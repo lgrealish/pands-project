@@ -29,7 +29,8 @@ ifds = pd.read_csv(csv_url, names = col_names)
 '''
 
 # code for outputting variables summary data to .txt file
-# https://www.geeksforgeeks.org/sys-stdout-write-in-python/
+# https://www.geeksforgeeks.org/sys-stdout-write-in-python
+# https://www.programcreek.com/python/example/11/sys.stdout
 def summary_output():
     sys.stdout = open ("output_summary_variable.txt","w")
     print ("\n")
@@ -162,7 +163,8 @@ def histograms():
 
 # function for plotting a pairplot
 # https://datagy.io/seaborn-pairplot/
-# https://www.javatpoint.com/pair-plot-in-python
+# https://towardsdatascience.com/seaborn-pairplot-enhance-your-data-understanding-with-a-single-plot-bf2f44524b22#:~:text=The%20Seaborn%20Pairplot%20allows%20us,to%20become%20familiar%20with%20it
+
 def pairplot():
     # using the hue paramter in seaborn denotes which column decides the colour, in this case the Species
     sns.pairplot(ifds,hue='Species')
@@ -171,7 +173,6 @@ def pairplot():
 
 
 # https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset
-
 # function for plotting a scatterplot for sepal length and width
 def sepal_length_width_scat():
     plt.figure(figsize = (9,9))
@@ -220,7 +221,7 @@ def boxplots():
     plt.savefig("Boxplots.png")
     plt.show()
 
-# main part of the code
+# main part of the code which runs all of the defined functions above
 summary_output()
 
 histograms()
