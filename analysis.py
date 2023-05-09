@@ -20,16 +20,13 @@ import sys
 # https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
 # https://www.youtube.com/watch?v=02BFXhPQWHQ
 ifds = pd.read_csv("iris.csv", index_col = "Id")
+
+# another option for reading in the data using a url link is detailed below, but I opted not to use this method
 '''
 csv_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
-col_names = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Species']
+col_names = ['SepalLengthCm','SepalWidthCm','PetalLengthCm','PetalWidthCm','Species']
 ifds = pd.read_csv(csv_url, names = col_names)
 '''
-
-# defining the three different species variables
-iris_s = ifds[ifds.Species == "Iris-setosa"]
-iris_vers = ifds[ifds.Species == "Iris-versicolor"]
-iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
 # code for outputting variables summary data to .txt file
 # https://www.geeksforgeeks.org/sys-stdout-write-in-python/
@@ -82,13 +79,21 @@ def summary_output():
     print ("\n")  
     # https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.describe.html
     # https://note.nkmk.me/en/python-pandas-t-transpose/#:~:text=Use%20the%20T%20attribute%20or,columns%20swapped%20(%3D%20transposed%20object).
-    # using the .T function to transpose (swap the columns and rows) to make the output easier to read)  
+    # using the .T function to transpose (swap the columns and rows) making the output easier to read)  
     print (ifds.groupby("Species").describe().T)
+    print ("\n")
+    print ("==============================================================================")
     sys.stdout.close()    
 ''
 # https://realpython.com/pandas-groupby/#pandas-groupby-putting-it-all-together
 # https://www.geeksforgeeks.org/pandas-groupby-and-computing-median/
 # https://datascienceparichay.com/article/pandas-groupby-median/
+
+
+# defining the three different species variables
+iris_s = ifds[ifds.Species == "Iris-setosa"]
+iris_vers = ifds[ifds.Species == "Iris-versicolor"]
+iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
 # function for plotting a histogram for sepal length
 def sepal_length_hist():
@@ -96,6 +101,7 @@ def sepal_length_hist():
     plt.figure(figsize = (9,9))
     # https://cmdlinetips.com/2019/02/how-to-make-histogram-in-python-with-pandas-and-seaborn/
     # https://medium.com/swlh/how-to-create-a-seaborn-palette-that-highlights-maximum-value-f614aecd706b
+    # using the previously defined variables 
     sns.histplot(iris_s["SepalLengthCm"],  kde = False, label = "Iris setosa", color = "lightblue", )
     sns.histplot(iris_vers["SepalLengthCm"],  kde = False, label = "Iris versicolor", color = "lightslategray")
     sns.histplot(iris_virg["SepalLengthCm"],  kde = False, label = "Iris virginica", color = "steelblue")

@@ -17,7 +17,6 @@ This repository is used for the final project given during the Programming and S
     * [Boxplots](#boxplots)
 * [Summary and Conclusions](#summary-and-conclusions)
 * [Technologies](#technologies)
-
 * [References](#references)
 
 # **Iris dataset**
@@ -69,7 +68,6 @@ Alternatively the data could be read in directly from a url, and the code for th
     import sys
 ```
 
-
 ***NumPy*** is a Python library that provides a  multidimensional array object, various derived objects (such as masked arrays and matrices), and an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more. [link](https://numpy.org/devdocs/user/whatisnumpy.html)
 
 ***Matplotlib*** is a comprehensive visualisation library in Python, built on NumPy arrays, for creating static, animated and interactive 2D plots or arrays. [link] (https://matplotlib.org/)\
@@ -84,7 +82,7 @@ Alternatively the data could be read in directly from a url, and the code for th
 ## **Dataset output summary**
 As instructed in the project scope, the summary of the variables in the dataset are saved in a text file and do not show upon running the code in analysis.py. [output_summary_variable.txt](https://github.com/lgrealish/pands-project/blob/main/output_summary_variable.txt)
 
-The defined function *summary_output()* contains the code for creating the dataset summary and writing it to a single .txt file.  This was achieved using the sys.stdout module. [link](https://www.geeksforgeeks.org/sys-stdout-write-in-python/)
+The defined function *summary_output()* contains the code for creating the dataset summary and writing it to a single .txt file.  This was achieved using the sys.stdout module. [geeksforgeeks](https://www.geeksforgeeks.org/sys-stdout-write-in-python/)
 
 From the output summary text file we can see the following details of the data set;
 
@@ -190,19 +188,25 @@ The boxplots above show that the Iris setosa stands out as having much smaller p
 
 # **Summary and Conclusions**
 
-The Iris data set is quite a small data set with a sample size of 150 and it's observations are split evenly into 3 species classes.  This makes me believe that it was not a random sample selection.
+For this project I used the *pandas*, *numpy*, *matplotlib* and *seaborn* libraries modules and *sys* module.  I examined the statistical properties of the Fisher Iris data set and used the aforementioned libraries and module to visualise the data, giving us a better understanding of the data.  As the old saying goes, a picture paints a thousand words!
 
-The average 
+The Iris data set is quite a small data set with a sample size of only 150 with it's observations divided evenly into 3 species classes.  This makes me believe that it was not a random sample selection.
 
-Looking at all of the statistics of both sepal and petal measurements generated in the output summary code as well as the plots it appears differences between the Iris setosa and the other two species is more pronounced than any other differences between the three classes. 
+The average petal length of the Iris setosa is much smaller than the other 2 species.  The Iris virginica has the largest average petal length measuring almost 4 times more than that of the Iris setosa.  There is little difference between the average petal length of the Iris virginica and Iris versicolor.
+
+The average petal width of the Iris setosa is also significantly smaller than that of the other two species.  
+
+The standard deviation across the species show that Iris setosa is much less variable that either of the other 2.
+
+The differences in average sepal length across the species varies much less but the Iris setosa still has the smallest of the three.
+
+The only measurements that the Iris setosa has the highest average is the sepal width.
 
 If compared by sepal width and length, Iris versicolor and Iris virginica would not be easily distinguishable.
 
-The standard deviations also show that the petal measurements 
+Looking at all of the statistics of both sepal and petal measurements generated in the output summary code as well as the plots it appears differences between the Iris setosa and the other two species is more pronounced than any other differences between the three classes. 
 
 # **Technologies**
-
-====
 
   * Visual Studio Code - version 1.77.1
   * Cmder - version 221218
