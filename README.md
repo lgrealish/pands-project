@@ -182,7 +182,9 @@ The pairplot shows that the Iris setosa is clearly different to the other 2 spec
 [Box Plots](https://www.geeksforgeeks.org/box-plot-in-python-using-matplotlib/)
 [Box Plots](https://www.python-graph-gallery.com/30-basic-boxplot-with-seaborn?utm_content=cmp-true)
 
-The code for these plots were
+Boxplots are very useful for showing various statistics in one plot, including minimum, quartiles, median and maximum.  The x-axis denotes the data to be plotted while the y-axis shows the frequency of distribution.
+
+<img src = "https://github.com/lgrealish/pands-project/blob/main/Boxplots.png" alt = "Sepal and Petal observations by species" width = "450" height = "450">
 
 # **Technologies**
 
