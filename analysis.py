@@ -83,7 +83,8 @@ def summary_output():
     # https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.describe.html
     # https://note.nkmk.me/en/python-pandas-t-transpose/#:~:text=Use%20the%20T%20attribute%20or,columns%20swapped%20(%3D%20transposed%20object).
     print ("A summary of the count, mean, median, standard deviation, percentiles for each \n of the 4 variables and grouped by species type")
-    print ("\n")    
+    print ("\n")  
+    # using the .T function to transpose (swap the columns and rows) to make the output easier to read)  
     print (ifds.groupby("Species").describe().T)
     sys.stdout.close()    
 ''
@@ -156,6 +157,7 @@ def histograms():
 # https://www.javatpoint.com/pair-plot-in-python
 
 def pairplot():
+    # using the hue paramter in seaborn denotes which column decides the colour, in this case the Species
     sns.pairplot(ifds,hue='Species')
     plt.savefig("Iris-dataset-pairplot.png")
     plt.show()
@@ -166,6 +168,7 @@ def pairplot():
 # function for plotting a scatterplot for sepal length and width
 def sepal_length_width_scat():
     plt.figure(figsize = (9,9))
+    # using the hue paramter in seaborn denotes which column decides the colour, in this case the Species
     sns.scatterplot(x = "SepalLengthCm", y = "SepalWidthCm", data = ifds, marker = "o", 
                     hue = "Species", palette = ["blue","orange","green"], edgecolor = "dimgrey")
     plt.title("Sepal length and Sepal width comparison", size = 20)
@@ -178,6 +181,7 @@ def sepal_length_width_scat():
 # function for plotting a scatterplot for petal length and width
 def petal_length_width_scat():
     plt.figure(figsize = (9,9))
+    # using the hue paramter in seaborn denotes which column decides the colour, in this case the Species
     sns.scatterplot(x = "PetalLengthCm", y = "PetalWidthCm", data = ifds, marker = "o", 
                     hue = "Species", palette = ["blue","orange","green"], edgecolor = "dimgrey")
     plt.title("Petal length and Petal width comparison", size = 20)
@@ -199,10 +203,10 @@ def boxplots():
     f, axes = plt.subplots(2, 2, sharey=False, figsize=(12, 8))
     sns.boxplot(x="Species", y="PetalLengthCm",data=ifds, ax = axes[0,0])
     sns.boxplot(x="Species", y="SepalLengthCm", data=ifds, ax=axes[0,1])
-    sns.boxplot(x="Species", y="PetalWidthCm",hue = "Species",data=ifds, ax=axes[1,0])
+    sns.boxplot(x="Species", y="PetalWidthCm", data=ifds, ax=axes[1,0])
     sns.boxplot(x="Species", y="SepalWidthCm", data=ifds, ax=axes[1,1])
     # adding a title to the plot
-    f.suptitle("Boxplot of the Petal and Sepal measurements by Iris plant Species")
+    f.suptitle("Boxplot of the Petal and Sepal measurements by Iris Species")
     plt.savefig("Boxplots.png")
     plt.show()
 

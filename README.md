@@ -10,11 +10,11 @@ This repository is used for the final project given during the Programming and S
     * [Dataset import](#dataset-import)
     * [Imported libraries and modules](#imported-libraries-and-modules)
     * [Dataset output summary](#datasetsummary)
-
 * [Plots](#plots)
     * [Histograms](#histograms)
     * [Scatterplots](#scatterplots)
     * [Pairplots](#pairplots)
+    * [Boxplots](#boxplots)
 * [Summary and Conclusions](#conclusions)
 * [Technologies](#technologies)
 
@@ -25,7 +25,8 @@ This repository is used for the final project given during the Programming and S
 ## **Iris dataset history**
 
 Iris flower data, also known as Fisher's Iris dataset was introduced by British biologist and statistitian Sir Ronald Aylmer Fisher. In 1936, Sir Fisher published a report titled [“The Use of Multiple Measurements in Taxonomic Problems”](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x) in the journal Annals of Eugenics. In this article, Fisher developed and evaluated a linear function to differentiate Iris species based on the morphology of their flowers. It was the first time that the sepal and petal measures of the three Iris species as mentioned above appeared publicly.\
-It is a multivariate data set of 50 samples which the author gathered on each of three species of Irises: setosa, versicolor and virginica. Measurements of 4 properties of 50 flowers of each of the plants were taken, namely Sepal length, Sepal width, Petal Length, and Petal width. The author suggests that the petal and sepal lengths and widths are characteristics whcih can be used to identify which species they belong to based on a linear discriminant model. Fischer himself developed the linear discriminant model,a statistical, machine learning and pattern recognition technique used to distinguish between two or more objects, classes or events. Ref [Linear discriminant analysis] [https://en.wikipedia.org/wiki/Linear_discriminant_analysis]Ref [Iris Data set wikipedia] [https://en.wikipedia.org/wiki/Iris_flower_data_set] Fischer presented the data for the 3 species in a table with each of the four measurements and subsequently, tables of observed means, sums of squares etc in order to demonstrate how each species can be discriminated from one another. 
+
+It is a multivariate data set of 50 samples which the author gathered on each of three species of Irises: setosa, versicolor and virginica. Measurements of 4 properties of 50 flowers of each of the plants were taken, namely Sepal length, Sepal width, Petal Length, and Petal width. The author suggests that the petal and sepal lengths and widths are characteristics whcih can be used to identify which species they belong to based on a linear discriminant model. Fischer himself developed the linear discriminant model,a statistical, machine learning and pattern recognition technique used to distinguish between two or more objects, classes or events. Ref [Linear discriminant analysis](https://en.wikipedia.org/wiki/Linear_discriminant_analysis)Ref [Iris Data set wikipedia](https://en.wikipedia.org/wiki/Iris_flower_data_set) Fischer presented the data for the 3 species in a table with each of the four measurements and subsequently, tables of observed means, sums of squares etc in order to demonstrate how each species can be discriminated from one another. 
 
 <img src = https://github.com/lgrealish/pands-project/blob/main/iris-species-image.png alt= "Iris flower species">
 
@@ -114,7 +115,9 @@ This output from the *describe()* function shows the count, mean, standard devia
 - Sepal length has the highest mean while petal width has the lowest mean.
 - The standard deviation in the petal lengths shows the highest variability of the four measurements at 1.76 while the standard deviations 
   of the petal width is approx 0.43.
-- The shortest petal o   
+- The shortest petal in the data set is 1cm with the longest measuring 6.9cm.
+- The sepal length has a larger mean than the other 3 variable.
+
 
 This output from the *groupby()* function shows mean and median sepal length, sepal width, petal length and petal width by species. [Link](https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset)
 
@@ -140,6 +143,8 @@ In this section I will look at the plots that I produced which visually summaris
 
 A histogram is a representation of the distribution of data.  The histograms below show the distribution of each of the measurement variables by species across the dataset.
 
+To create the histograms firstly I defined 4 seperate functions, 1 for each of the variables (SepalLengthCm. SepalWidthCm, PetalLengthCm, PetalWidthCm).  These were then grouped in a function called *histograms()*.
+
 
 <img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-length.png" alt = "Sepal length" width = "450" height = "450"><img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-width.png" alt = "Sepal length" width = "450" height = "450">
 
@@ -147,15 +152,37 @@ A histogram is a representation of the distribution of data.  The histograms bel
 
 The histogram for the sepal length shows quite a bit of variation with a number of various peaks while the sepal width is more centred around the 3cm but with smaller peaks either side.  
 
-The histogram of the petal length shows the Iris setosa has a petal length that is much smaller than the those of the other 2 species.
+We can see that the Iris setosa has a petal length and petal width that is much smaller than the those of the other 2 species.  The Iris setosa also has the smallest sepal length but the largest sepal width.
 
 ## **Scatterplots**
 
 Scatterplots shows how the different variables in the dataset correlate with one another.  One variable is plotted on the x-axis with the other plotted on the y-axis.  The scatterplots below show the relationship between sepal measurements and petal measurements.
 
-<img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-length-width.png" alt = "Sepal length" width = "450" height = "450"><img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-length-width.png" alt = "Sepal length" width = "450" height = "450">
+similarly to the histogram code, each scatterplot was definied in a seperate function before being grouped in a *scatterplot()* function.
+
+<img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-length-width.png" alt = "Sepal length and Sepal width" width = "450" height = "450"><img src = "https://github.com/lgrealish/pands-project/blob/main/Petal-length-width.png" alt = "Petal length and Petal width" width = "450" height = "450">
+
+From the Sepal length and Sepal width scatterplot it is easier to distinguish Iris setosa than Iris versicolor and Iris virginica. Iris setosa has wider and shorter sepals, while the other species are not easy to differentiate based on this data.
+
+From the Petal length and Petal width scatterplot the difference between the three species is much more noticable. Iris setosa is very distinct and has the smallest and narrowest petals of the three. Iris virginica has the biggest petals.
 
 ## **Pairplot**
+[Pairplots](https://towardsdatascience.com/seaborn-pairplot-enhance-your-data-understanding-with-a-single-plot-bf2f44524b22#:~:text=The%20Seaborn%20Pairplot%20allows%20us,to%20become%20familiar%20with%20it.)
+
+Using the *pairplot()* we can produce the following pairplot which displays all pairwise relationships between variables within a dataset.  It creates a nice visualisation which summarises a large amount of data in a single figure.  Pairplots give a good comparison and observation of the data and provides enough information to draw conclusions.
+
+Because there are 4 different variables in our data set (SepalLengthCm, SepalWidthCm, PetalLengthCm, PetalWidthCm) a 4x4 plot is created.
+
+The pairplot shows that the Iris setosa is clearly different to the other 2 species.  We can also see that is more difficult to differentiate the other 2 species from one another as there is more overlap in the data points.
+
+<img src = "https://github.com/lgrealish/pands-project/blob/main/Sepal-length-width.png" alt = "Sepal length and Sepal width" width = "450" height = "450">
+
+## **Boxplots**
+
+[Box Plots](https://www.geeksforgeeks.org/box-plot-in-python-using-matplotlib/)
+[Box Plots](https://www.python-graph-gallery.com/30-basic-boxplot-with-seaborn?utm_content=cmp-true)
+
+The code for these plots were
 
 # **Technologies**
 
