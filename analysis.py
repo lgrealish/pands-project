@@ -3,7 +3,6 @@
 # This program reads in data from the iris.csv file and produces various analysis, plot and summary outputs
 
 # https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
-# https://gist.github.com/accessnash/7c255c0cfc12d2725ac79f6710ba19a3
 # https://realpython.com/pandas-plot-python/
 
 # import the modules needed 
