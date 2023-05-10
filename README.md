@@ -12,7 +12,7 @@ This repository is used for the final project given during the Programming and S
     * [Dataset output summary](#datasetsummary)
 * [Plots](#plots)
     * [Histograms](#histograms)
-    * [Pairplots](#pairplots)
+    * [Pairplot](#pairplot)
     * [Scatterplots](#scatterplots)   
     * [Boxplots](#boxplots)
 * [Summary and Conclusions](#summary-and-conclusions)
