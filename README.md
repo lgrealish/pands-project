@@ -207,7 +207,7 @@ The average petal length of the Iris setosa is much smaller than the other 2 spe
 
 The average petal width of the Iris setosa is also significantly smaller than that of the other two species.  
 
-The standard deviation across the species show that Iris setosa is much less variable that either of the other 2.
+The standard deviation across the species show that Iris setosa is much less variable than that either of the other 2.
 
 The differences in average sepal length across the species varies much less but the Iris setosa still has the smallest of the three.
 
