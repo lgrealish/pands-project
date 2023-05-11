@@ -12,7 +12,7 @@ This repository is used for the final project given during the Programming and S
     * [Dataset output summary](#datasetsummary)
 * [Plots](#plots)
     * [Histograms](#histograms)
-    * [Pairplots](#pairplots)
+    * [Pairplot](#pairplot)
     * [Scatterplots](#scatterplots)   
     * [Boxplots](#boxplots)
 * [Summary and Conclusions](#summary-and-conclusions)
@@ -224,37 +224,37 @@ Looking at all of the statistics of both sepal and petal measurements generated 
 
 # **References**
 
-  https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x
-  https://en.wikipedia.org/wiki/Linear_discriminant_analysis
-  https://en.wikipedia.org/wiki/Iris_flower_data_set
-  https://realpython.com/python-csv/
-  https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
-  https://www.youtube.com/watch?v=02BFXhPQWHQ
-  https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
-  https://towardsdatascience.com/getting-more-value-from-the-pandas-value-counts-aa17230907a6
-  https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.describe.html
-  https://note.nkmk.me/en/python-pandas-t-transpose/#:~:text=Use%20the%20T%20attribute%20or,columns%20swapped%20(%3D%20transposed%20object)
-  https://realpython.com/pandas-groupby/#pandas-groupby-putting-it-all-together
-  https://www.geeksforgeeks.org/pandas-groupby-and-computing-median/
-  https://datascienceparichay.com/article/pandas-groupby-median/
-  https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
-  https://numpy.org/devdocs/user/whatisnumpy.html
-  https://matplotlib.org/)%5C
-  https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html
-  https://seaborn.pydata.org/index.html
-  https://www.geeksforgeeks.org/sys-stdout-write-in-python/
-  https://www.programcreek.com/python/example/11/sys.stdout
-  https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset
-  https://cmdlinetips.com/2019/02/how-to-make-histogram-in-python-with-pandas-and-seaborn/
-  https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib
-  https://medium.com/swlh/how-to-create-a-seaborn-palette-that-highlights-maximum-value-f614aecd706b
-  https://datagy.io/seaborn-pairplot/
-  https://towardsdatascience.com/seaborn-pairplot-enhance-your-data-understanding-with-a-single-plot-bf2f44524b22#:~:text=The%20Seaborn%20Pairplot%20allows%20us,to%20become%20familiar%20with%20it
-  https://www.geeksforgeeks.org/box-plot-in-python-using-matplotlib/
-  https://www.python-graph-gallery.com/30-basic-boxplot-with-seaborn?utm_content=cmp-true
-  https://stackoverflow.com/questions/24383700/resize-image-in-the-wiki-of-github-using-markdown
-  https://stackoverflow.com/questions/24319505/how-can-one-display-images-side-by-side-in-a-github-readme-md
-  https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#headers
+  * https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x
+  * https://en.wikipedia.org/wiki/Linear_discriminant_analysis
+  * https://en.wikipedia.org/wiki/Iris_flower_data_set
+  * https://realpython.com/python-csv/
+  * https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
+  * https://www.youtube.com/watch?v=02BFXhPQWHQ
+  * https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
+  * https://towardsdatascience.com/getting-more-value-from-the-pandas-value-counts-aa17230907a6
+  * https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.describe.html
+  * https://note.nkmk.me/en/python-pandas-t-transpose/#:~:text=Use%20the%20T%20attribute%20or,columns%20swapped%20(%3D%20transposed%20object)
+  * https://realpython.com/pandas-groupby/#pandas-groupby-putting-it-all-together
+  * https://www.geeksforgeeks.org/pandas-groupby-and-computing-median/
+  * https://datascienceparichay.com/article/pandas-groupby-median/
+  * https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
+  * https://numpy.org/devdocs/user/whatisnumpy.html
+  * https://matplotlib.org/)%5C
+  * https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html
+  * https://seaborn.pydata.org/index.html
+  * https://www.geeksforgeeks.org/sys-stdout-write-in-python/
+  * https://www.programcreek.com/python/example/11/sys.stdout
+  * https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset
+  * https://cmdlinetips.com/2019/02/how-to-make-histogram-in-python-with-pandas-and-seaborn/
+  * https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib
+  * https://medium.com/swlh/how-to-create-a-seaborn-palette-that-highlights-maximum-value-f614aecd706b
+  * https://datagy.io/seaborn-pairplot/
+  * https://towardsdatascience.com/seaborn-pairplot-enhance-your-data-understanding-with-a-single-plot-bf2f44524b22#:~:text=The%20Seaborn%20Pairplot%20allows%20us,to%20become%20familiar%20with%20it
+  * https://www.geeksforgeeks.org/box-plot-in-python-using-matplotlib/
+  * https://www.python-graph-gallery.com/30-basic-boxplot-with-seaborn?utm_content=cmp-true
+  * https://stackoverflow.com/questions/24383700/resize-image-in-the-wiki-of-github-using-markdown
+  * https://stackoverflow.com/questions/24319505/how-can-one-display-images-side-by-side-in-a-github-readme-md
+  * https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#headers
 
 
 
